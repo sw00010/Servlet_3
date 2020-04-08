@@ -35,7 +35,6 @@
 	  <p>This is some text.</p>      
 	  <p>This is another text.</p>      
 	</div>
-	<h1>Add Contents</h1>
 
 </body>
 </html>

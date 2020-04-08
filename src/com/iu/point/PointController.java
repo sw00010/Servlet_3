@@ -72,7 +72,7 @@ public class PointController extends HttpServlet {
 					pointDTO.setName(name);
 					pointDTO.setNum(num);
 					int result = pointService.pointAdd(pointDTO);
-					check =false;
+					check = false;
 					path = "./pointList";
 				} else {
 					check = true;

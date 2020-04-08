@@ -47,27 +47,27 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	<form action="./pointList">
+	<form action="./pointAdd" method="POST">
 		<h1>Point Add Form</h1>
 		<div class="form-group">
 			<label for="name">Name:</label> <input type="text"
-				class="form-control" name="name">
+				class="form-control" name="name" id="name">
 		</div>
 		<div class="form-group">
-			<label for="num">Num:</label> <input type="text"
-				class="form-control" name="num">
+			<label for="num">Num:</label> <input type="text" class="form-control"
+				name="num" id="num">
 		</div>
 		<div class="form-group">
-			<label for="kor">Kor:</label> <input type="text"
-				class="form-control" name="kor">
+			<label for="kor">Kor:</label> <input type="text" class="form-control"
+				name="kor" id="kor">
 		</div>
 		<div class="form-group">
-			<label for="eng">Eng</label> <input type="text"
-				class="form-control" name="eng">
+			<label for="eng">Eng</label> <input type="text" class="form-control"
+				name="eng" id="eng">
 		</div>
 		<div class="form-group">
 			<label for="math">Math:</label> <input type="text"
-				class="form-control" name="math">
+				class="form-control" name="math" id="math">
 		</div>
 
 

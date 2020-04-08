@@ -60,7 +60,20 @@ public class PointController extends HttpServlet {
 
 			} else if (command.equals("/pointAdd")) {
 				if (method.equals("POST")) {
-
+					PointDTO pointDTO = new PointDTO();
+					String name = request.getParameter("name");
+					int num = Integer.parseInt(request.getParameter("num"));
+					int kor = Integer.parseInt(request.getParameter("kor"));
+					int eng = Integer.parseInt(request.getParameter("eng"));
+					int math = Integer.parseInt(request.getParameter("math"));
+					pointDTO.setEng(eng);
+					pointDTO.setKor(kor);
+					pointDTO.setMath(math);
+					pointDTO.setName(name);
+					pointDTO.setNum(num);
+					int result = pointService.pointAdd(pointDTO);
+					check =false;
+					path = "./pointList";
 				} else {
 					check = true;
 					path = "../WEB-INF/views/point/pointAdd.jsp";

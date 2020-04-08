@@ -73,6 +73,24 @@ public class PointDAO {
 	}
 	
 	//3. Insert
+	public int pointAdd(PointDTO pointDTO) throws Exception{
+		int result;
+		Connection con = DBConnect.getConnect();
+		String sql = "insert into point values(?,?,?,?,?,?,?)";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, pointDTO.getName());
+		st.setInt(2, pointDTO.getNum());
+		st.setInt(3, pointDTO.getKor());
+		st.setInt(4, pointDTO.getEng());
+		st.setInt(5, pointDTO.getMath());
+		st.setInt(6, pointDTO.getTotal());
+		st.setDouble(7, pointDTO.getAvg());
+		result = st.executeUpdate();
+		st.close();
+		con.close();
+		
+		return result;
+	}
 	
 	//4. Update
 	

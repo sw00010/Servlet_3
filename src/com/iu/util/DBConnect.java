@@ -25,7 +25,16 @@ public class DBConnect {
 		
 		String user = "user02";
 		String password = "user02";
+		
+		//not connect
+		//1. ip,port,xe 정보가 틀린경우 
+		//2. 물리적으로 연결이 안되거나, 서버가 종료된 경우
+		//3. Listener문제 , DB재시동
 		String url = "jdbc:oracle:thin:@192.168.56.101:1521:xe";
+		
+		//class not found
+		//1. driver명이 틀린 경우 
+		//2. jdbc(ojdbc6.jar)가 없는 경우
 		String driver = "oracle.jdbc.driver.OracleDriver";
 		
 		//2. 드라이버를 메모리에 로딩

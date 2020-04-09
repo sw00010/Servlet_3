@@ -1,8 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +30,8 @@
 						<li><a href="#">Page 1-2</a></li>
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
-				<li><a href="${pageContext.request.contextPath}/point/pointList">Point</a></li>
+				<li><a
+					href="${pageContext.request.contextPath}/point/pointList">Point</a></li>
 				
 			</ul>
 			
@@ -56,32 +54,37 @@
 		<p>This is some text.</p>
 		<p>This is another text.</p>
 	</div>
-	
-	<div class="container">
-		<div class="row">
-			<h1>Point List Page</h1>
-			<table class="table table-hover">
-				<tr>
-					<td>번호</td>
-					<td>이름</td>
-					<td>평균</td>
-				</tr>
-				<c:forEach items="${list}" var="dto">
-					<tr>
-						<td>${dto.num}</td>
-						<td><a href="./pointSelect?num=${dto.num}">${dto.name}</a></td>
-						<td>${dto.avg }</td>
-					</tr>
-				</c:forEach>
-				
-			
-			</table>
-			
-			<a href="./pointAdd" class ="btn btn-primary">Point Add</a>
-		</div>	
-	</div>
-	
-	
+	<form action="./memberJoin" method="POST">
+		<h1>Member Join</h1>
+		<div class="form-group">
+			<label for="name">Name:</label> <input type="text"
+				class="form-control" name="name">
+		</div>
+		<div class="form-group">
+			<label for="age">Age:</label> <input type="text" class="form-control"
+				name="age" >
+		</div>
+		<div class="form-group">
+			<label for="id">ID:</label> <input type="text" class="form-control"
+				name="id">
+		</div>
+		<div class="form-group">
+			<label for="pw">PW</label> <input type="password" class="form-control"
+				name="pw" >
+		</div>
+		<div class="form-group">
+			<label for="email">E-Mail:</label> <input type="text"
+				class="form-control" name="email">
+		</div>
+		
+		<div class="form-group">
+			<label for="phone">Phone:</label> <input type="text"
+				class="form-control" name="phone">
+		</div>
+
+
+		<button type="submit" class="btn btn-default">Submit</button>
+	</form>
 	
 </body>
 </html>

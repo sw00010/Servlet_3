@@ -31,7 +31,14 @@
 						<li><a href="#">Page 1-3</a></li>
 					</ul></li>
 				<li><a href="${pageContext.request.contextPath}/point/pointList">Point</a></li>
-				<li><a href="#">Page 3</a></li>
+				
+			</ul>
+			
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="${pageContext.request.contextPath}/member/memberJoin"><span class="glyphicon glyphicon-user"></span>
+						Sign Up</a></li>
+				<li><a href="${pageContext.request.contextPath}/member/memberLogin"><span class="glyphicon glyphicon-log-in"></span>
+						Login</a></li>
 			</ul>
 		</div>
 	</nav>

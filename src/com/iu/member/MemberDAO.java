@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 import com.iu.util.DBConnect;
 
 public class MemberDAO {
@@ -49,6 +50,36 @@ public class MemberDAO {
 		con.close();
 		return memberDTO;
 	}
+	public int memberDelete(MemberDTO memberDTO) throws Exception {
+		int result=0;
+		Connection con = DBConnect.getConnect();
+		String sql = "delete member where id=? and pw=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1, memberDTO.getId());
+		st.setString(2, memberDTO.getPw());
+		result=st.executeUpdate();
+		st.close();
+		con.close();
+		return result;
+	}
+	
+	public MemberDTO memberUpdate(MemberDTO memberDTO) throws Exception {
+		
+		Connection con = DBConnect.getConnect();
+		String sql = "update member set name=?,age=?,email=?,phone=? where id=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setString(1,memberDTO.getName());
+		st.setInt(2, memberDTO.getAge());
+		st.setString(3, memberDTO.getEmail());
+		st.setString(4, memberDTO.getPhone());
+		st.setString(5, memberDTO.getId());
+		st.executeUpdate();
+		st.close();
+		con.close();
+		return memberDTO;
+		
+	}
+
 	
 	
 }

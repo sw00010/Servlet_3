@@ -10,6 +10,7 @@
 ##JSP
 - /WEB-INF/views/member/...
 
+<<<<<<< HEAD
 URL
 /member/memberJoin		memberJoin.jsp		GET
 /member/memberJoin							POST
@@ -22,6 +23,18 @@ URL
 
 
 
+=======
+###URL
+
+- /member/memberJoin			memberJoin.jsp		GET
+- /member/memberJoin								POST
+- /member/memberLogin		memberLogin.jsp		GET
+- /member/memberLogin							POST
+- /member/memberPage			memberPage.jsp		GET
+- /member/memberUpdate		memberUpdate.jsp	GET
+- /member/memberUpdate							POST
+- /member/memberDelete							GET
+>>>>>>> Add_Member
 
 ##기능
 - point list 출력 

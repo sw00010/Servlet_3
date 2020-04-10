@@ -46,7 +46,7 @@ public class PointController extends HttpServlet {
 
 		// Forward(true) , redirect(false) 선택
 		boolean check = true;
-
+	
 		// URL(path)를 담을 변수
 		String path = "";
 		try {

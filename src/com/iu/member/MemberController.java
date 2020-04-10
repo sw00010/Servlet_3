@@ -96,15 +96,19 @@ public class MemberController extends HttpServlet {
 			} else if (command.equals("/memberUpdate")) {
 				if(method.equals("POST")) {
 					MemberDTO memberDTO = new MemberDTO();
+					HttpSession session = request.getSession();
 					memberDTO.setAge(Integer.parseInt(request.getParameter("age")));
 					memberDTO.setEmail(request.getParameter("email"));
 					memberDTO.setName(request.getParameter("name"));
 					memberDTO.setId(request.getParameter("id"));
 					memberDTO.setPhone(request.getParameter("phone"));
-					memberDTO = memberService.memberUpdate(memberDTO);
-					HttpSession session = request.getSession();
-					session.setAttribute("member", memberDTO);
-					String msg = "회원정보 수정이 되었습니다.";
+					int result = memberService.memberUpdate(memberDTO);
+					String msg="회원정보 수정이 실패했습니다.";
+					if(result>0) {
+						session.setAttribute("member", memberDTO);
+						msg = "회원정보 수정이 되었습니다.";
+					}
+					
 					request.setAttribute("result", msg);
 					request.setAttribute("path", "./memberPage");
 					path = "../WEB-INF/views/common/result.jsp";
@@ -119,9 +123,9 @@ public class MemberController extends HttpServlet {
 				HttpSession session = request.getSession();
 				memberDTO = (MemberDTO)session.getAttribute("member");
 				int result = memberService.memberDelete(memberDTO);
-				session.invalidate();
 				String msg="";
 				if(result>0) {
+					session.invalidate();
 					msg = "탈퇴되었습니다.";
 					
 				}

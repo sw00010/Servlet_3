@@ -63,7 +63,7 @@ public class MemberDAO {
 		return result;
 	}
 	
-	public MemberDTO memberUpdate(MemberDTO memberDTO) throws Exception {
+	public int memberUpdate(MemberDTO memberDTO) throws Exception {
 		
 		Connection con = DBConnect.getConnect();
 		String sql = "update member set name=?,age=?,email=?,phone=? where id=?";
@@ -73,10 +73,11 @@ public class MemberDAO {
 		st.setString(3, memberDTO.getEmail());
 		st.setString(4, memberDTO.getPhone());
 		st.setString(5, memberDTO.getId());
-		st.executeUpdate();
+		int result = st.executeUpdate();
 		st.close();
 		con.close();
-		return memberDTO;
+		
+		return result;
 		
 	}
 

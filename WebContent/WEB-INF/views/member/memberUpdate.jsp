@@ -11,6 +11,7 @@
 	<c:import url="../template/header.jsp"></c:import>
 	<c:import url="../template/boot.jsp"></c:import>
 	
+	<div class="container">
 	<form action="./memberUpdate" method="POST">
 		<h1>Member Update</h1>
 		<div class="form-group">
@@ -37,5 +38,6 @@
 
 		<button type="submit" class="btn btn-default">Submit</button>
 	</form>
+	</div>
 </body>
 </html>

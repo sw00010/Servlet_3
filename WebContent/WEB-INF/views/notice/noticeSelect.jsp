@@ -40,8 +40,10 @@
 				<label for="comment">글내용:</label>
 				<textarea class="form-control" rows="5" id="documentContents" readonly="readonly">${ndto.documentContents }</textarea>
 			</div>
-			<a href="./noticeUpdate?documentNum=${ndto.documentNum}" class="btn btn-primary">Update</a>
-			<a href="./noticeDelete?documentNum=${ndto.documentNum}" class="btn btn-danger">Delete</a>
+			<c:if test="${member.id eq 'admin'}">
+				<a href="./noticeUpdate?documentNum=${ndto.documentNum}" class="btn btn-primary">Update</a>
+				<a href="./noticeDelete?documentNum=${ndto.documentNum}" class="btn btn-danger">Delete</a>
+			</c:if>
 
 		</div>
 	</div>

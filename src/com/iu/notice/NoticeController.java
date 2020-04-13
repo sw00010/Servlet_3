@@ -54,8 +54,11 @@ public class NoticeController extends HttpServlet {
 					NoticeDTO noticeDTO = new NoticeDTO();
 					String documentName = request.getParameter("documentName");
 					String documentContents = request.getParameter("documentContents");
+					String writeId = request.getParameter("writeId");
+					System.out.println(writeId);
 					noticeDTO.setDocumentContents(documentContents);
 					noticeDTO.setDocumentName(documentName);
+					noticeDTO.setWriteId(writeId);
 					int result = noticeService.noticeAdd(noticeDTO);
 					String msg = "글 등록 실패";
 					if(result>0) {
@@ -82,7 +85,7 @@ public class NoticeController extends HttpServlet {
 					String msg = "글 수정 실패";
 					if(result>0) {
 						msg = "글 수정 성공";
-						request.setAttribute("path", "./noticeSelect?documentNum"+num);
+						request.setAttribute("path", "./noticeSelect?documentNum="+num);
 					}
 					else {
 						request.setAttribute("path", "./noticeList");
@@ -106,6 +109,7 @@ public class NoticeController extends HttpServlet {
 			} else if (command.equals("/noticeSelect")) {
 				int num = Integer.parseInt(request.getParameter("documentNum"));
 				NoticeDTO noticeDTO = noticeService.noticeSelect(num);
+				noticeService.noticeViewUpdate(num);
 				request.setAttribute("ndto", noticeDTO);
 				
 				path = "../WEB-INF/views/notice/noticeSelect.jsp";

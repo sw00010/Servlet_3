@@ -58,10 +58,11 @@ public class NoticeDAO {
 	public int noticeAdd(NoticeDTO noticeDTO) throws Exception {
 		int result = 0;
 		Connection con = DBConnect.getConnect();
-		String sql = "insert into notice values(notice_seq.nextval,?,?,'admin',0,sysdate)";
+		String sql = "insert into notice values(notice_seq.nextval,?,?,?,0,sysdate)";
 		PreparedStatement st = con.prepareStatement(sql);
 		st.setString(1, noticeDTO.getDocumentName());
 		st.setString(2, noticeDTO.getDocumentContents());
+		st.setString(3, noticeDTO.getWriteId());
 		result = st.executeUpdate();
 		st.close();
 		con.close();
@@ -97,6 +98,19 @@ public class NoticeDAO {
 		
 		
 		return result;
+	}
+	public int noticeViewUpdate(int num) throws Exception {
+		int result = 0;
+		Connection con = DBConnect.getConnect();
+		String sql = "update notice set documentviews=documentviews+1 where documentnum=?";
+		PreparedStatement st = con.prepareStatement(sql);
+		st.setInt(1, num);
+		result = st.executeUpdate();
+		st.close();
+		con.close();
+		
+		return result;
+		
 	}
 	
 	

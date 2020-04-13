@@ -24,5 +24,8 @@ public class NoticeService {
 	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception {
 		return noticeDAO.noticeUpdate(noticeDTO);
 	}
+	public int noticeViewUpdate(int num) throws Exception {
+		return noticeDAO.noticeViewUpdate(num);
+	}
 	
 }

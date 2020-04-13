@@ -20,6 +20,13 @@
 			<label for="comment">글내용:</label>
 			<textarea class="form-control" rows="5" name="documentContents"></textarea>
 		</div>
+		<div>
+			<label>작성자 :
+				<input readonly="readonly" name="writeId" value="${member.id}">
+			</label>
+			
+		</div>
+		
 
 
 		<button type="submit" class="btn btn-default">Submit</button>

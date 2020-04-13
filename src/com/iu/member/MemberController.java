@@ -36,6 +36,9 @@ public class MemberController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		
+		getServletConfig().getInitParameter("");
+		getServletContext().getInitParameter("");
 		String command = request.getPathInfo();
 		boolean check = true;
 		String method = request.getMethod();

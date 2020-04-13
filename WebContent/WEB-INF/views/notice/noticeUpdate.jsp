@@ -22,9 +22,9 @@
 		</div>
 
 
-		<button type="submit" class="btn btn-default">Submit</button>
+		<button type="submit" class="btn btn-primary" name="documentNum" value="${ndto.documentNum }">Submit</button>
 		
-		<a href="./noticeUpdate?num=${ndto.documentNum}" class="btn btn-primary">Update</a>
+		
 	</form>
 
 </body>

@@ -25,7 +25,7 @@
 				<c:forEach items="${nlist}" var="ndto">
 					<tr>
 						<td>${ndto.documentNum}</td>
-						<td><a href="./noticeSelect?documentNum=${ndto.documentNum}">${ndto.documentName}</a></td>
+						<td id="document"><a href="./noticeSelect?documentNum=${ndto.documentNum}">${ndto.documentName}</a></td>
 						<td>${ndto.writeId }</td>
 						<td>${ndto.writeDate }</td>
 						<td>${ndto.documentViews }</td>
@@ -41,4 +41,18 @@
 	</div>	
 
 </body>
+<script type="text/javascript">
+	$("#document").click(function() {
+		
+	});
+
+
+
+
+
+
+
+
+</script>
+
 </html>
